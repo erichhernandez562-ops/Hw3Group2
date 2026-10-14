@@ -12,7 +12,12 @@ void Store::num_customers(int customer_count)
   num_customers_ = customer_count;
 }
 
-int Store::num_products(int product_count)
+int Store::num_customers()
+{
+  return num_customers_;
+}
+
+void Store::num_products(int product_count)
 {
     num_products_ = product_count;
 }

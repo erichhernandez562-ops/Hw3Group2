@@ -36,3 +36,51 @@ int Store::num_transactions()
 {
     return num_transactions_;
 }
+
+bool Store::add_customer(Person customer)
+{
+    if (num_customers_ >= 100)
+{
+  return false;
+}
+
+customers_ [num_customers_] = customer;
+num_customers_++;
+
+return true;
+}
+
+bool Store::update_customer(int index, Person customer)
+{
+    if (index < 0 || index >= num_customers_)
+{
+  return false;
+}
+
+customers_[index] = customer;
+
+return true;
+}
+
+Person Store::get_customer(int index)
+{
+    if (index < 0 || index >= num_customers_)
+{
+    return Person();
+}
+
+return customers_[index];
+}
+
+int Store::find_customer(Person cust)
+{
+  for (int index = 0; index < num_customers_; index++)
+{
+  if (customers_[index].name() == cust.name())
+{
+  return index;
+}
+}
+
+return -1;
+}

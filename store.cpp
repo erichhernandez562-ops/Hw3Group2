@@ -89,3 +89,25 @@ int Store::find_customer(Person cust)
 
 return -1;
 }
+
+bool Store::add_product(product item)
+{
+  if (num_producst_ >= 100)
+{
+  return false;
+}
+  products_[num_products_] = item;
+  num_products_++;
+
+  return true;
+}
+
+product Store::get_product(int index)
+{
+    if (index < 0 || index >= num_products_)
+{
+    return product();
+}
+
+return producst_[index];
+}

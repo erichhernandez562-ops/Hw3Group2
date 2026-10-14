@@ -92,7 +92,7 @@ return -1;
 
 bool Store::add_product(product item)
 {
-  if (num_producst_ >= 100)
+  if (num_products_ >= 100)
 {
   return false;
 }
@@ -109,5 +109,5 @@ product Store::get_product(int index)
     return product();
 }
 
-return producst_[index];
+return products_[index];
 }

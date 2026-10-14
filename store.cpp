@@ -57,6 +57,11 @@ bool Store::update_customer(int index, Person customer)
   return false;
 }
 
+if (customers_[index].name() != customer.name())
+{
+  return false;
+}
+
 customers_[index] = customer;
 
 return true;

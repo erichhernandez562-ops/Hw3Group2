@@ -182,3 +182,16 @@ string Store:: product_info()
 
 return info;
 }
+
+string Store::customer_info()
+{
+  string info = "Customers:\n";
+
+  for (int index = 0; index < num_customers_; index++)
+{
+    info += customers_[index].person_info();
+    info += "\n";
+}
+
+return info;
+}

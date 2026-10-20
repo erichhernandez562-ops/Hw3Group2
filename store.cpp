@@ -149,10 +149,10 @@ if (customer_index == -1)
     return false;
 }
 
-Person updated_customer = customers_[cusomer_index];
+Person updated_customer = customers_[customer_index];
 credit_card card = updated_customer.person_credit_card();
 
-double purcahse_total = item.price * amount;
+double purchase_total = item.price * amount;
 
 if (!card.make_purchase(purchase_total))
 {
@@ -160,7 +160,7 @@ if (!card.make_purchase(purchase_total))
 }
 
 updated_customer.person_credit_card(card);
-updated_customer(customer_index, updated_customer);
+updated_customer(customer_index, update_customer);
 
 transaction new_transaction;
 new_transaction.transaction_number = num_transactions_ + 1;
@@ -168,5 +168,5 @@ new_transaction.customer = updated_customer;
 new_transaction.purchased_item = item;
 new_transaction.quantity = amount;
 
-return add_transaction(new_transaction;
+return add_transaction(new_transaction);
 }

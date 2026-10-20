@@ -224,7 +224,7 @@ string Store::store_info()
 
 string Store::purchase_history(Person customer)
 {
-  string info = "Purchase History for " + customer.name() + "\n";
+  string info = "Purchase History for " + customer.name() + ":\n";
 
   for (int index = 0; index < num_transactions_; index++)
 {

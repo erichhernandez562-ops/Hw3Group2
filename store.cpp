@@ -220,3 +220,20 @@ string Store::store_info()
 
   return info;
 }
+
+
+string Store::purchase_history(Person customer)
+{
+  string info = "Purchase History for " + customer.name() + "\n";
+
+  for (int index = 0; index < num_transactions_; index++)
+{
+  if (transactions_[index].customer.name() == customer.name())
+{
+  info += transactions_[index].transaction_info();
+  info += "\n";
+}
+}
+
+  return info;
+}

@@ -111,3 +111,27 @@ product Store::get_product(int index)
 
 return products_[index];
 }
+
+bool Store::add_transaction(transaction new_transaction)
+{
+  if (num_transactions_ >= 100)
+{
+  return false;
+}
+
+transactions_[num_transactions_] = new_transaction;
+num_transactions_++;
+
+return true;
+}
+
+transaction Store::get_transaction(int index)
+{
+    if (index < 0 || index >= num_transactions_)
+{
+    return transaction();
+}
+
+return transactions_[index];
+}
+

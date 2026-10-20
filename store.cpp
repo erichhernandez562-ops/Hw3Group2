@@ -170,3 +170,15 @@ new_transaction.quantity = amount;
 
 return add_transaction(new_transaction);
 }
+
+string Store:: product_info()
+{
+      string info = "Products:\n";
+      for (int index = 0; index < num_products_; index++)
+{
+      info += products_[index].product_info();
+      info += "\n";
+}
+
+return info;
+}

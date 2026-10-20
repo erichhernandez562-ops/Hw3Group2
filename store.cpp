@@ -195,3 +195,15 @@ string Store::customer_info()
 
 return info;
 }
+
+string Store::transaction_info()
+{
+    string info = "All Transactions:\n";
+    for (int index = 0; index < num_transactions_; index++)
+{
+    info += transactions_[index].transaction_info();
+    info += "\n";
+}
+
+return info;
+}

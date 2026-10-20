@@ -160,7 +160,7 @@ if (!card.make_purchase(purchase_total))
 }
 
 updated_customer.person_credit_card(card);
-updated_customer(customer_index, update_customer);
+update_customer(customer_index, updated_customer);
 
 transaction new_transaction;
 new_transaction.transaction_number = num_transactions_ + 1;

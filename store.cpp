@@ -207,3 +207,16 @@ string Store::transaction_info()
 
 return info;
 }
+
+string Store::store_info()
+{
+    string info;
+
+  info += customer_info();
+  info += "\n";
+  info += product_info();
+  info += "\n";
+  info += transaction_info();
+
+  return info;
+}

@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra
 TARGET = hw3
 
-SOURCES = main.cpp address.cpp credit_card.cpp person.cpp store.cpp transaction.cpp
+SOURCES = main.cpp address.cpp credit_card.cpp person.cpp product.cpp store.cpp transaction.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(TARGET)

@@ -135,3 +135,38 @@ transaction Store::get_transaction(int index)
 return transactions_[index];
 }
 
+bool Store::make_purchase(Person customer, product item, int amount)
+{
+  if (amount <= 0 || num_transactions_ >= 100)
+{
+    return false;
+}
+
+int customer_index = find_customer(customer);
+
+if (customer_index == -1)
+{
+    return false;
+}
+
+Person updated_customer = customers_[cusomer_index];
+credit_card card = updated_customer.person_credit_card();
+
+double purcahse_total = item.price * amount;
+
+if (!card.make_purchase(purchase_total))
+{
+  return false;
+}
+
+updated_customer.person_credit_card(card);
+updated_customer(customer_index, updated_customer);
+
+transaction new_transaction;
+new_transaction.transaction_number = num_transactions_ + 1;
+new_transaction.customer = updated_customer;
+new_transaction.purchased_item = item;
+new_transaction.quantity = amount;
+
+return add_transaction(new_transaction;
+}

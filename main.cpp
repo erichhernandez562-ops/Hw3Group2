@@ -42,7 +42,7 @@ int main()
 // product count of products.txt
 int product_count;
 productsFile >> product_count;
-productsFile.ignore(); //ignoring the count of products
+productsFile.ignore(); //removing new line after product count
 
 // read products
 for (int index = 0; index < product_count; index++)
@@ -62,11 +62,11 @@ for (int index = 0; index < product_count; index++)
 
 // people and addresses
 	//max 100 customers
-Person people[100]
+Person people[100];
 	int people_count;
-	//ignore count of people in file
+	//removing new line after read people count
 	peopleFile >> people_count;
-	peopleFile.ignore()
+	peopleFile.ignore();
 
 	// get peoples info
 		for (int index = 0; index < people_count; index++)

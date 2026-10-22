@@ -4,5 +4,5 @@
 using namespace std;
 
 string product::product_info() {
-    return "Product Name:"+ name + "description:" + description+ "price:" + to_string(price);
+    return "\nProduct Name: " + name + "\n, Description: " + description + "\n, Price: " + to_string(price);
 }

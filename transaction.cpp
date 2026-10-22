@@ -6,6 +6,6 @@ using namespace std;
 
 string transaction::transaction_info()
 {
-    string info=  " transaction_number: " + to_string(transaction_number) + "customer: " + customer.person_info() + " purchased_item: " + purchased_item.product_info() + " quantity: " + to_string(quantity);
+    string info=  " transaction_number: " + to_string(transaction_number) + "\ncustomer: " + customer.person_info() + "\n purchased_item: " + purchased_item.product_info() + "\n quantity: " + to_string(quantity);
     return info;
 }

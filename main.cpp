@@ -31,7 +31,7 @@ int main()
 		return 1;
 	}
 	if (!creditCardsFile.is_open()) {
-		cout << "Error opening credit_cards.txt" << endl;
+		cout << "Error opening credit_card.txt" << endl; //Butterfield - fixed file name
 		return 1;
 	}
 	if (!peopleFile.is_open()) {

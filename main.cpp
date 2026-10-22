@@ -112,6 +112,7 @@ Person people[100];
 			creditCardsFile >> cards[index].limit;
 			creditCardsFile >> cards[index].current_balance;
 			creditCardsFile.ignore(); //remove newline after balance
+		}
 
 	//now going to match each person with their credit card by name
 	for (int person_index = 0; person_index < people_count; person_index++)

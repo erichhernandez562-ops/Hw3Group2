@@ -42,7 +42,7 @@ int main()
 // product count of products.txt
 int product_count;
 productsFile >> product_count;
-productsFile.ignore();
+productsFile.ignore(); //ignoring the count of products
 
 // read products
 for (int index = 0; index < product_count; index++)
@@ -60,7 +60,37 @@ for (int index = 0; index < product_count; index++)
 		store1.add_product(item);
 	}
 
+// people and addresses
+	//max 100 customers
+Person people[100]
+	int people_count;
+	//ignore count of people in file
+	peopleFile >> people_count;
+	peopleFile.ignore()
 
+	// get peoples info
+		for (int index = 0; index < people_count; index++)
+		{
+			string person_name;
+			string person_phone;
+			address person_address;
+
+			getline(peopleFile, person_name);
+			getline(peopleFile, person_phone);
+			getline(peopleFile, person_address.address_line1);
+			getline(peopleFile, person_address.address_line2);
+			getline(peopleFile, person_address.city);
+			getline(peopleFile, person_address.state);
+			getline(peopleFile, person_address.zip);
+
+	//will assign correct card after
+			credit_card empty_card;
+			empty_card.cc_number = 0;
+			empty_card.limit = 0.0;
+			empty_card.current_balance = 0.0;
+	// creating person and storing it in temp array
+			people[index] = Person(person_name, person_phone, person_address, empty_card);
+		}
 
 
 

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include <ctime> // using to give rand a diff starting seed for each run
 
 #include "address.h"
 #include "credit_card.h"
@@ -152,7 +153,49 @@ Person people[100];
 
 	  // Make a purchase
 
-	//make random number of random transactions
+	//random # of purchase attempts
+	// make sure cust and prod loaded
+	if (store1.num_costers() == 0 || store1.num_products() == 0)
+	{
+		cout << "Cannot make purchases because Store data is missing." << endl;
+		return 1;
+	}
+
+	//use current time so random choices change
+	srand(time(0));
+	// Generate 11-99 purchase attempts
+	int transaction_attempts = rand() % 89 + 11;
+	for (int attempt = 0; attempt < transaction_attempts; attempt++)
+		{
+			//randomly select stored cust and prod
+			int customer_index = rand() % store1.num_customers();
+			int product_index = rand() % store1.num_products();
+			//Generate purch amount between 1 through 10
+			int quantity = rand() % 10 + 1;
+
+			person selected_customer = store1.get_customer(customer_index);
+			product selected_product = store1.get_product(product_index);
+			//attempt purchase
+			bool purchase_successful = store1.make_purchase(selected_customer, selected_product, quantity);
+			if (purchase_successful)
+			{
+				cout << "Successful transaction!" << endl;
+				cout << "Transaction Details:" << endl;
+				// store successful transaction
+				cout << store1.get_transaction(store1.num_transactions() - 1).transaction_info() << endl;
+			}
+			else
+			{
+				cout << "Unsuccessful transation!" << endl;
+				cout << "Transaction Details:" << endl;
+				cout << "Person:" << endl;
+				cout << selected_customer.person_info() << endl;
+				cout << "Product:" << endl;
+				cout << selected_product.product_info() << endl;
+				cout << "Purchase Quantity: " << quantity << endl;
+			}
+			cout << endl;
+		}
 
 	//print store info at the end
 	cout << "Store info: " << endl << endl;

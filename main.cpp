@@ -39,7 +39,26 @@ int main()
 		return 1;
 	}	
 
+// product count of products.txt
+int product_count;
+productsFile >> product_count;
+productsFile.ignore();
 
+// read products
+for (int index = 0; index < product_count; index++)
+	{
+		product item;
+		//name and desc may have spaces
+		getline(productsFile, item.name);
+		getline(productsFile, item.description);
+
+		// product price
+		productsFile >> item.price;
+		productsFile.ignore();
+
+		// store product
+		store1.add_product(item);
+	}
 
 
 
@@ -55,7 +74,6 @@ int main()
 	cout << store1.store_info() << endl << endl;
 
 	  // Make a purchase
-    store1.make_purchase(customer1, item1, 1);
 
 	//make random number of random transactions
 

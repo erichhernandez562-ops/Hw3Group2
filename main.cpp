@@ -45,9 +45,9 @@ int main()
     address address1;
     address1.address_line1 = "111 Hollywood Lane";
     address1.address_line2 = "";
-    address1.city = "";
-    address1.state = "";
-    address1.zip = "";
+    address1.city = "Auburn ";
+    address1.state = "Alabama";
+    address1.zip = "35209";
 
     // Create credit card
     credit_card card1;

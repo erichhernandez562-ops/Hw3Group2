@@ -42,7 +42,8 @@ int main()
 // product count of products.txt
 int product_count;
 productsFile >> product_count;
-productsFile.ignore(); //removing new line after product count
+//removing new line after product count
+productsFile.ignore(); 
 
 // read products
 for (int index = 0; index < product_count; index++)
@@ -90,6 +91,51 @@ Person people[100];
 			empty_card.current_balance = 0.0;
 	// creating person and storing it in temp array
 			people[index] = Person(person_name, person_phone, person_address, empty_card);
+		}
+
+	//store card owner names and credit cards seperately
+	string card_names[100];
+	credit_card cards[100];
+
+	int card_count;
+
+	//read number of records and ignore newline after count
+	creditCardsFile >> card_count;
+	creditCardsFile.ignore();
+
+	// read all cards owners names
+	for (int index = 0; index < card_count; index++)
+		{
+			getline(creditCardsFile, card_names[index]);
+
+			creditCardsFile >> cards[index].cc_number;
+			creditCardsFile >> cards[index].limit;
+			creditCardsFile >> cards[index].current_balance;
+			creditCardsFile.ignore(); //remove newline after balance
+
+	//now going to match each person with their credit card by name
+	for (int person_index = 0; person_index < people_count; person_index++)
+		{
+			bool card_found = false;
+			for (int card_index = 0; card_index < card_count; card_index++)
+				{
+					if (people[person_index].name() == card_names[card_index])
+					{
+						//give that person their matching card
+						people[person_index].person_credit_card(cards[card_index]);
+						card_found = true;
+						break;
+					}
+				}
+			if (card_found)
+			{
+				//add completed customer to Store
+				store1.add_customer(people[person_index]);
+			}
+			else
+			{
+				cout << "No credit card found for: " <<people[person_index].name() << endl;
+			}
 		}
 
 

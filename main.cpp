@@ -23,7 +23,7 @@ int main()
 	//import from text files
 
 	ifstream productsFile("products.txt");
-	ifstream creditCardsFile("credit_cards.txt");
+	ifstream creditCardsFile("credit_card.txt"); //Butterfield - fixed file name
 	ifstream peopleFile("people.txt");
 	// check if it opens or not
 	if (!productsFile.is_open()) {

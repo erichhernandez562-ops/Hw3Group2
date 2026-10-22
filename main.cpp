@@ -155,7 +155,7 @@ Person people[100];
 
 	//random # of purchase attempts
 	// make sure cust and prod loaded
-	if (store1.num_costers() == 0 || store1.num_products() == 0)
+	if (store1.num_customers() == 0 || store1.num_products() == 0)
 	{
 		cout << "Cannot make purchases because Store data is missing." << endl;
 		return 1;
@@ -173,7 +173,7 @@ Person people[100];
 			//Generate purch amount between 1 through 10
 			int quantity = rand() % 10 + 1;
 
-			person selected_customer = store1.get_customer(customer_index);
+			Person selected_customer = store1.get_customer(customer_index);
 			product selected_product = store1.get_product(product_index);
 			//attempt purchase
 			bool purchase_successful = store1.make_purchase(selected_customer, selected_product, quantity);
@@ -186,7 +186,7 @@ Person people[100];
 			}
 			else
 			{
-				cout << "Unsuccessful transation!" << endl;
+				cout << "Unsuccessful transaction!" << endl;
 				cout << "Transaction Details:" << endl;
 				cout << "Person:" << endl;
 				cout << selected_customer.person_info() << endl;

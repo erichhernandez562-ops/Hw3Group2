@@ -5,5 +5,5 @@
 using namespace std;
 
 string address::address_info(){
-    return "address 1: " + address_line1 + "\naddress 2: " + address_line2 + "\ncity: " + city + "\n state: " + state + "\n zip: " + zip;
+    return "address 1: " + address_line1 + "\naddress 2: " + address_line2 + "\ncity: " + city + "\nstate: " + state + "\nzip: " + zip;
 }

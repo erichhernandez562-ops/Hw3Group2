@@ -22,7 +22,7 @@ bool credit_card::make_payment(double payment_amount) {
 
 }
 string credit_card::credit_card_info() {
-    string info = "\nCredit Card Number: " + to_string(cc_number) + "\n Credit card Limit: " + to_string(limit) + "\nCurrent Balance: " + to_string(current_balance) ;
+    string info = "\nCredit Card Number: " + to_string(cc_number) + "\nCredit card Limit: " + to_string(limit) + "\nCurrent Balance: " + to_string(current_balance) ;
     return info;
 
 }
